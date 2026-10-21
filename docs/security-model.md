@@ -1,9 +1,17 @@
 # Security model
 
-## What we protect
+> **Which section is for you:** *In plain terms* is for anyone who's curious. *For contributors* is for developers. *Scratchpad* holds working notes.
+
+## In plain terms
+
+Your passwords never leave your computer. Nothing gets deleted or changed without your OK, and you get a record of every time a password was used.
+
+## For contributors
+
+### What we protect
 Plaintext credentials, and the ability to use them.
 
-## Threats to think through
+### Threats to think through
 - **Prompt injection from web pages.** A malicious page tells the model to type
   a password into the wrong field or site. Mitigation: domain binding enforced
   by the policy engine, not the model.
@@ -16,7 +24,13 @@ Plaintext credentials, and the ability to use them.
 - **Model leaking secrets in output.** Mitigation: the model handles references,
   not plaintext.
 
-## Guarantees we want
+### Guarantees we want
 - Plaintext never crosses the tunnel.
 - Every access is logged locally.
 - Destructive actions (delete, bulk rotate) require user approval.
+
+## Scratchpad
+
+_Working notes, half-formed ideas, and to-dos for this topic. These get turned into proper briefs later._
+
+- [ ] Add notes here

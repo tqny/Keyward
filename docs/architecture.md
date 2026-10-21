@@ -1,5 +1,13 @@
 # Architecture
 
+> **Which section is for you:** *In plain terms* is for anyone who's curious. *For contributors* is for developers. *Scratchpad* holds working notes.
+
+## In plain terms
+
+Keyward is a small program that runs on your own computer, next to your password manager. It's the only thing that ever touches your passwords. Anything else, including cloud AI, has to ask it, and it does the login itself.
+
+## For contributors
+
 ```mermaid
 flowchart LR
   subgraph Local machine
@@ -11,7 +19,7 @@ flowchart LR
   K <-- encrypted tunnel<br/>requests and outcomes only --> C[Cloud model provider]
 ```
 
-## Components
+### Components
 
 - **Local model** — a small language model, in several size tiers
   ([model tiers](model-tiers.md)). It understands web pages and forms well
@@ -30,8 +38,14 @@ flowchart LR
 - **Audit log** — a local record of every credential access, fill, and
   rotation.
 
-## Key design rule
+### Key design rule
 The model reasons about *which* credential and *where* to put it, but should
 ideally never see the plaintext itself. The secret flows from adapter to form
 field through a handle (e.g. `cred://github.com/main`), and the model only
 handles the reference.
+
+## Scratchpad
+
+_Working notes, half-formed ideas, and to-dos for this topic. These get turned into proper briefs later._
+
+- [ ] Add notes here

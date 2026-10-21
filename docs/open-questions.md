@@ -1,5 +1,13 @@
 # Open questions
 
+> **Which section is for you:** *In plain terms* is for anyone who's curious. *For contributors* is for developers. *Scratchpad* holds working notes.
+
+## In plain terms
+
+Keyward is an early idea. These are the big things still to figure out, and good places to jump in if you want to help.
+
+## For contributors
+
 - **Name.** "Keyward" is a placeholder.
 - **Base model.** Which small open model to start from, and how to fine-tune it
   on login and change-password flows?
@@ -20,3 +28,9 @@
 - **License.** Apache-2.0, MIT, or something copyleft?
 - **Trust and audits.** How to earn trust for software that touches every
   password: reproducible builds, third-party audits?
+
+## Scratchpad
+
+_Working notes, half-formed ideas, and to-dos for this topic. These get turned into proper briefs later._
+
+- [ ] Add notes here
