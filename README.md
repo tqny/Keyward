@@ -51,3 +51,11 @@ _Running notes for tracking the idea until there's time for proper briefs._
 - [ ] Pick a real name
 - [ ] Turn use cases into briefs
 - [ ] Decide when to publish publicly
+
+### Notes from calls (Oct 21, 2026)
+
+- **The idea feels obvious once you say it out loud.** That's a good sign for a concept. Lean on it when writing briefs: lead with the one-sentence version and let it land on its own.
+- **New direction: an "Omar key" plugin** (the caller's words: "maybe we'll even turn this into an Omar key plugin"). The name came from a voice transcript and may be a mishearing, possibly Omarchy, the Linux setup. Confirm what was meant.
+  - *In plain terms:* Keyward could come as a plugin you add to a setup you already use, instead of a separate app.
+  - *For contributors:* Look at what that platform's plugin system allows for running a local model, getting at the keyring, and controlling the browser.
+  - [ ] Confirm the platform and check how plugins work there
