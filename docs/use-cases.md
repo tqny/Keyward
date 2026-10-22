@@ -6,6 +6,8 @@
 
 Clean up years of bad passwords in one go, and let AI assistants log in for you without handing over your passwords.
 
+**Sudo without sharing the password.** Your AI assistant can install security updates on your computer without ever being told your computer's password. Keyward runs only commands you've already approved, and it checks with you on your phone before running anything else.
+
 ## For contributors
 
 ### 1. Bulk rotation of old, reused passwords
@@ -25,6 +27,27 @@ A cloud assistant is booking a trip and needs the user's airline login. It asks
 Keyward to log in. Keyward fills the credential locally and replies
 `logged_in`. The assistant continues the task without ever having seen the
 password.
+
+### 3. Sudo without sharing the password
+A cloud assistant needs to run security patches on a Linux machine
+(`pacman -Syu`, `update-ca-trust`, Docker checks), but `sudo` needs the user's
+password, which should never go into a chat.
+
+1. The cloud assistant sends a request over the tunnel, e.g. "run this vetted
+   command with sudo on `solo-m1`".
+2. Keyward on that machine holds the sudo credential.
+3. The **policy engine** checks the request against a deterministic allowlist
+   of exact commands.
+4. Anything not on the list needs the user's approval on their phone.
+5. Keyward runs the command and returns only the outcome (exit status and a
+   short summary), never the password.
+
+Sudo is higher stakes than a website login because it unlocks the whole
+machine. So the policy engine (the command allowlist plus approval) makes the
+decision, not the model.
+
+*Interim approach in use today:* a scoped `/etc/sudoers.d` `NOPASSWD` rule for
+a few exact commands.
 
 ### Other possibilities
 - Breach response: rotate every account touched by a known breach.

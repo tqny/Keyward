@@ -17,6 +17,12 @@ Plaintext credentials, and the ability to use them.
   by the policy engine, not the model.
 - **A compromised or misbehaving cloud model.** Mitigation: no plaintext verbs,
   per-domain allowlists, approval for sensitive actions, rate limits.
+- **Cloud request escalating to arbitrary root.** A cloud model (compromised,
+  misled, or buggy) uses a sudo request to run something other than what was
+  vetted, such as extra arguments, chained commands, or a script that changes
+  between approval and run. Mitigation: exact-command allowlist matching in the
+  policy engine (not the model), no shell expansion, phone approval for
+  anything off the list, and every privileged run logged.
 - **Malware on the local machine.** Largely out of scope, same as any password
   manager, but Keyward should not make it worse.
 - **Lost passwords during rotation.** Mitigation: write-back before submit,
